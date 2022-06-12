@@ -1,30 +1,61 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+	<div id="app">
+		<div class="row">
+			<div class="col-4">
+				<WidgetPanel />
+			</div>
+			<div class="col-8">
+				<ContentPanel />
+			</div>
+		</div>
+	</div>
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue'
+import WidgetPanel from "@/components/WidgetPanel.vue";
+import ContentPanel from "@/components/ContentPanel.vue";
+
+export default defineComponent({
+	components: {
+		WidgetPanel,
+		ContentPanel
+	}
+})
+</script>
+
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import "./styles/bootstrap.scss";
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", serif;
 }
 
-nav {
-  padding: 30px;
+body {
+	* {
+		box-sizing: border-box;
+	}
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#app {
+	width: 100%;
+	height: 100%;
+	background-image: url("../public/bg.jpg");
+	background-size: cover;
+	background-position: 50% 50%;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+	> div.row {
+		height: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		> div {
+			height: 100%;
+		}
+	}
 }
 </style>

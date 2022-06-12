@@ -1,0 +1,9 @@
+{
+	"name": "Jussi's Epic Startpage",
+	"description": "Replace your shitty default start page with this one",
+	"version": "1.0",
+	"manifest_version": 3,
+	"chrome_url_overrides" : {
+		"newtab": "index.html"
+	}
+ }
